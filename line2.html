@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>line2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="font-awesome.min.css" rel="stylesheet">
+    <link href="videojiexipro.css" rel="stylesheet">
+    <link href="line2.css" rel="stylesheet">
+    <script src="jquery-1.12.4.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="popper.min.js"></script>
+    <script src="util.min.js"></script>
+    <script src="collapse.min.js"></script>
+    <script src="dropdown.min.js"></script>
+    <script src="toast.min.js"></script>
+    <script src="wwb16.min.js"></script>
+    <script src="vp.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("a[href*='#header']").click(function(event) {
+                event.preventDefault();
+                $('html, body').stop().animate({
+                    scrollTop: $('#wb_header').offset().top
+                }, 600, 'easeOutCirc');
+            });
+
+            function bubbleTextJavaScript1() {
+                var bubbleArray = [];
+                var sizeArray = [4, 6, 8, 10];
+                for (var i = 0; i < $('.bubbles').width(); i++) {
+                    bubbleArray.push(i);
+                }
+
+                function randomValue(arr) {
+                    return arr[Math.floor(Math.random() * arr.length)];
+                }
+                setInterval(function() {
+                    var size = randomValue(sizeArray);
+                    $('.bubbles').append('<div class="bubble" style="left: ' + randomValue(bubbleArray) + 'px; width: ' + size + 'px; height:' + size + 'px;"></div>');
+                    $('.bubble').animate({
+                        'bottom': '100%',
+                        'opacity': '-=0.7'
+                    }, 4000, function() {
+                        $(this).remove()
+                    });
+                }, 350);
+            }
+            bubbleTextJavaScript1();
+            $('#ThemeableMenu1 .dropdown-toggle').dropdown({
+                popperConfig: {
+                    placement: 'bottom-start',
+                    modifiers: {
+                        computeStyle: {
+                            gpuAcceleration: false
+                        }
+                    }
+                }
+            });
+            $(document).on('click', '.ThemeableMenu1-navbar-collapse.show', function(e) {
+                if ($(e.target).is('a') && ($(e.target).attr('class') != 'dropdown-toggle')) {
+                    $(this).collapse('hide');
+                }
+            });
+            $("#Toast1").toast({
+                animation: true,
+                autohide: true,
+                delay: 3000
+            });
+            $("#Toast1").toast('show');
+            $("#Toast2").toast({
+                animation: true,
+                autohide: true,
+                delay: 6000
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wb_header">
+        <div id="header">
+            <div class="row">
+                <div class="col-1">
+                    <div id="wb_JavaScript1" style="display:inline-block;width:100%;z-index:0;">
+                        <div style="color:#F2F2F2;font-size:24px;font-family:Microsoft JhengHei UI;font-weight:bold;text-decoration:%underline%;animation: spinZ 4000s linear infinite;text-align:center" id="JavaScript1">
+                            <div class="bubbles">
+                                <div class="text">视频解析</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div id="wb_ThemeableMenu1" style="display:inline-block;width:100%;z-index:1;">
+                        <div id="ThemeableMenu1" class="ThemeableMenu1" style="width:100%;height:auto !important;">
+                            <div class="container">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".ThemeableMenu1-navbar-collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+                                </div>
+                                <div class="ThemeableMenu1-navbar-collapse collapse">
+                                    <ul class="nav navbar-nav">
+                                        <li class="nav-item dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">线路<b class="caret"></b></a>
+                                            <ul class="dropdown-menu">
+                                                <li class="nav-item"><a href="./index.html" class="nav-link">自定义线路</a></li>
+                                                <li class="nav-item"><a href="./line1.html" class="nav-link">线路1</a></li>
+                                                <li class="nav-item"><a href="./line2.html" class="nav-link">线路2</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">小项目<b class="caret"></b></a>
+                                            <ul class="dropdown-menu">
+                                                <li class="nav-item"><a href="./google.html" class="nav-link">谷歌账号</a></li>
+                                                <li class="nav-item"><a href="./shipai.html" class="nav-link">实拍群</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="FlexContainer1">
+        <div id="wb_LayoutGrid1">
+            <div id="LayoutGrid1">
+                <div class="row">
+                    <div class="col-1">
+                    </div>
+                    <div class="col-2">
+                        <iframe name="InlineFrame1" id="InlineFrame1" src="./qianru.html" scrolling="no" allowfullscreen></iframe>
+                    </div>
+                    <div class="col-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="FlexContainer2">
+        <div id="wb_LayoutGrid2">
+            <div id="LayoutGrid2">
+                <div class="row">
+                    <div class="col-1">
+                    </div>
+                    <div class="col-2">
+                        <input type="url" id="Editbox1" style="display:block;width: 100%;height:36px;z-index:5;" name="Editbox1" value="" spellcheck="false" placeholder="&#36755;&#20837;&#24819;&#35201;&#30475;&#28404;&#35270;&#39057;&#30340;&#22320;&#22336;o((&gt;&#969;&lt; ))o">
+                    </div>
+                    <div class="col-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="FlexContainer3">
+        <div id="wb_LayoutGrid3">
+            <div id="LayoutGrid3">
+                <div class="row">
+                    <div class="col-1">
+                    </div>
+                    <div class="col-2">
+                        <input type="button" id="Button1" onclick="vp2();$('#Toast2').toast('show');return false;" name="" value="确定" style="display:inline-block;width:120px;height:40px;z-index:8;">
+                    </div>
+                    <div class="col-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div aria-live="polite" aria-atomic="true" id="toasts">
+        <div id="Toast1" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong>Notification</strong>
+                <small class="text-muted">just now</small>
+                <button type="button" class="close" data-dismiss="toast" aria-label="Close">
+         <span aria-hidden="true">&times;</span>
+      </button>
+            </div>
+            <div class="toast-body">
+                <p style="color:#000000;"><span style="font-weight:bold;">当前为线路</span><span style="font-weight:bold;">2</span></p>
+            </div>
+        </div>
+        <div id="Toast2" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong>Notification</strong>
+                <small class="text-muted">just now</small>
+                <button type="button" class="close" data-dismiss="toast" aria-label="Close">
+         <span aria-hidden="true">&times;</span>
+      </button>
+            </div>
+            <div class="toast-body">
+                <p style="font-weight:bold;color:#000000;">OK 正在解析(～￣(OO)￣)ブ</p>
+                <p style="font-weight:bold;color:#000000;">如果长时间没有反应，就换个线路哦</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

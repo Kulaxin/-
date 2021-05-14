@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题页面</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="videojiexipro.css" rel="stylesheet">
+<link href="qianru.css" rel="stylesheet">
+<script src="anime.min.js"></script>
+<script src="polymorph.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(event)
+{
+   var shapePath = document.querySelector('#MorphingIcon1-shape');
+   var paths = ["M372 0 C406 0, 421 31, 406 57 C391 83, 347 103, 335 124 C323 144, 342 165, 342 188 C341 213, 321 240, 295 236 C269 232, 236 197, 184 192 C132 187, 61 211, 26 206 C-9 202, -8 170, 27 149 C63 128, 133 120, 147 95 C161 69, 120 27, 123 19 C127 12, 176 38, 228 36 C281 33, 336 0, 372 0", 
+                "M315 9 C355 22, 386 49, 405 78 C422 108, 427 141, 407 165 C386 189, 340 203, 304 215 C268 227, 244 235, 221 234 C198 232, 176 219, 141 221 C106 222, 57 236, 49 228 C40 219, 73 188, 62 159 C51 130, -3 103, 0 91 C3 80, 61 84, 101 70 C140 57, 159 27, 194 12 C227 -3, 275 -4, 315 9", 
+                "M323 88 C361 122, 414 152, 413 177 C412 203, 356 225, 311 228 C265 232, 231 217, 171 208 C112 198, 28 195, 6 166 C-16 138, 24 86, 72 49 C120 12, 177 -8, 218 2 C259 12, 284 52, 323 88", 
+                "M335 4 C362 14, 365 46, 380 76 C396 107, 423 135, 423 163 C423 192, 394 220, 355 227 C315 234, 265 218, 218 215 C171 212, 127 221, 87 215 C47 209, 12 186, 3 159 C-7 132, 11 102, 37 81 C63 60, 98 49, 129 40 C160 31, 187 25, 224 16 C262 6, 310 -6, 335 4", 
+                "M321 2 C354 7, 376 29, 393 52 C411 74, 424 98, 403 113 C382 128, 328 133, 297 148 C266 162, 261 186, 235 204 C210 223, 166 237, 144 225 C122 214, 121 178, 100 156 C80 133, 39 126, 17 111 C-3 96, -6 72, 12 56 C31 40, 70 32, 104 27 C139 22, 169 21, 206 15 C243 8, 288 -3, 321 2"];
+   var interpolator = [];
+   interpolator[0] = polymorph.interpolate([paths[0], paths[1]]);
+   interpolator[1] = polymorph.interpolate([paths[1], paths[2]]);
+   interpolator[2] = polymorph.interpolate([paths[2], paths[3]]);
+   interpolator[3] = polymorph.interpolate([paths[3], paths[4]]);
+   interpolator[4] = polymorph.interpolate([paths[4], paths[0]]);
+   let progress = { prop: 0 };
+   var pathIndex = 0;
+   anime({
+      targets: progress,
+      prop: 1,
+      delay: 0,
+      duration: 2000,
+      easing: 'easeInOutQuart',
+      loop: true,
+      direction: 'normal',
+      update(anim) 
+      {
+         shapePath.setAttribute('d', interpolator[pathIndex](progress.prop));
+         if (anim.progress == 100)
+         {
+            pathIndex++;
+            if (pathIndex > 4)
+               pathIndex = 0;
+         }
+      }
+   });
+});
+</script>
+</head>
+<body>
+<div id="FlexContainer1">
+<div id="wb_LayoutGrid1">
+<div id="LayoutGrid1">
+<div class="row">
+<div class="col-1">
+</div>
+<div class="col-2">
+<div id="wb_MorphingIcon1" style="display:inline-block;width:430px;height:240px;z-index:0;position:relative;">
+<svg id="MorphingIcon1" height="100%" width="100%" style="position:absolute;height:100%;width:100%;left:0;top:0" viewBox="0 0 430 240" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<defs>
+   <pattern id="MorphingIcon1-pattern" patternUnits="userSpaceOnUse" width="430" height="240">
+   <image xlink:href="images/qianru.jpg" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+   </pattern>
+   <path id="MorphingIcon1-shape" d="M372 0 C406 0, 421 31, 406 57 C391 83, 347 103, 335 124 C323 144, 342 165, 342 188 C341 213, 321 240, 295 236 C269 232, 236 197, 184 192 C132 187, 61 211, 26 206 C-9 202, -8 170, 27 149 C63 128, 133 120, 147 95 C161 69, 120 27, 123 19 C127 12, 176 38, 228 36 C281 33, 336 0, 372 0" />
+</defs>
+<use xlink:href="#MorphingIcon1-shape" data-href="#MorphingIcon1-shape" style="fill:url(#MorphingIcon1-pattern);stroke:#0963AD;stroke-width:0"/>
+</svg>
+
+</div>
+</div>
+<div class="col-3">
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
